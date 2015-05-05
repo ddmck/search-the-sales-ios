@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PersonalShopper/SearchViewController.swift"
+            timestampString = "452516249.58962"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "SearchViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PersonalShopper/FeaturedTableViewController.swift"
+            timestampString = "452522802.893607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "FeaturedTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PersonalShopper.FeaturedTableViewController.products.getter : Swift.Array&lt;PersonalShopper.Product&gt;"
+                  moduleName = "PersonalShopper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donald/Programming/iOS/PersonalShopper/PersonalShopper/FeaturedTableViewController.swift"
+                  timestampString = "452526693.880025"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PersonalShopper.FeaturedTableViewController.products.setter : Swift.Array&lt;PersonalShopper.Product&gt;"
+                  moduleName = "PersonalShopper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donald/Programming/iOS/PersonalShopper/PersonalShopper/FeaturedTableViewController.swift"
+                  timestampString = "452526693.880302"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PersonalShopper.FeaturedTableViewController.init (PersonalShopper.FeaturedTableViewController.Type)(style : C.UITableViewStyle) -&gt; PersonalShopper.FeaturedTableViewController"
+                  moduleName = "PersonalShopper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donald/Programming/iOS/PersonalShopper/PersonalShopper/FeaturedTableViewController.swift"
+                  timestampString = "452526693.880547"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PersonalShopper.FeaturedTableViewController.init (PersonalShopper.FeaturedTableViewController.Type)(nibName : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, bundle : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSBundle&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;PersonalShopper.FeaturedTableViewController&gt;"
+                  moduleName = "PersonalShopper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donald/Programming/iOS/PersonalShopper/PersonalShopper/FeaturedTableViewController.swift"
+                  timestampString = "452526693.880656"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "149">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PersonalShopper.FeaturedTableViewController.init (PersonalShopper.FeaturedTableViewController.Type)(coder : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSCoder&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;PersonalShopper.FeaturedTableViewController&gt;"
+                  moduleName = "PersonalShopper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donald/Programming/iOS/PersonalShopper/PersonalShopper/FeaturedTableViewController.swift"
+                  timestampString = "452526693.880791"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "79">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PersonalShopper/SearchViewController.swift"
+            timestampString = "452527822.027139"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "SearchViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PersonalShopper.SearchViewController.genderData.getter : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;"
+                  moduleName = "PersonalShopper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donald/Programming/iOS/PersonalShopper/PersonalShopper/SearchViewController.swift"
+                  timestampString = "452526693.904756"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PersonalShopper.SearchViewController.init (PersonalShopper.SearchViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; PersonalShopper.SearchViewController"
+                  moduleName = "PersonalShopper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donald/Programming/iOS/PersonalShopper/PersonalShopper/SearchViewController.swift"
+                  timestampString = "452526693.904969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "253">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PersonalShopper.SearchViewController.init (PersonalShopper.SearchViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; PersonalShopper.SearchViewController"
+                  moduleName = "PersonalShopper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donald/Programming/iOS/PersonalShopper/PersonalShopper/SearchViewController.swift"
+                  timestampString = "452526693.905132"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "165">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
