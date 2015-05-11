@@ -76,6 +76,7 @@
                                     <outlet property="nameLabel" destination="hih-et-JCz" id="LQs-za-XqT"/>
                                     <outlet property="priceLabel" destination="Gbp-fb-fi2" id="5q1-SU-8Bx"/>
                                     <outlet property="productImage" destination="X4P-Sc-Q16" id="KLU-T6-p1y"/>
+                                    <segue destination="2Mb-hW-b37" kind="show" identifier="toProductDetail" id="0PH-w6-BAf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -134,7 +135,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTf-cl-dqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2131" y="-603"/>
+            <point key="canvasLocation" x="2184" y="-1007"/>
+        </scene>
+        <!--ProductDetailController-->
+        <scene sceneID="GQ8-fk-7f8">
+            <objects>
+                <viewController title="ProductDetailController" id="2Mb-hW-b37" customClass="ProductDetailViewController" customModule="PersonalShopper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w6z-f2-aOL"/>
+                        <viewControllerLayoutGuide type="bottom" id="iWr-sl-G4e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gxw-rk-1V6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sXe-pv-x55">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2hu-gQ-4KM">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="yXY-5E-cVr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Product name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSa-7M-0C2">
+                                        <rect key="frame" x="8" y="408" width="584" height="21"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Product Description" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcP-rA-ybE">
+                                        <rect key="frame" x="8" y="437" width="584" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HcP-rA-ybE" firstAttribute="top" secondItem="CSa-7M-0C2" secondAttribute="bottom" constant="8" id="0j4-ya-uxE"/>
+                                    <constraint firstAttribute="centerX" secondItem="2hu-gQ-4KM" secondAttribute="centerX" id="9Tu-IY-htd"/>
+                                    <constraint firstItem="2hu-gQ-4KM" firstAttribute="top" secondItem="sXe-pv-x55" secondAttribute="top" id="B8e-SJ-CBA"/>
+                                    <constraint firstItem="HcP-rA-ybE" firstAttribute="leading" secondItem="sXe-pv-x55" secondAttribute="leading" constant="8" id="Wtc-OR-yC4"/>
+                                    <constraint firstAttribute="trailing" secondItem="HcP-rA-ybE" secondAttribute="trailing" constant="8" id="XJH-hv-rCH"/>
+                                    <constraint firstItem="2hu-gQ-4KM" firstAttribute="leading" secondItem="sXe-pv-x55" secondAttribute="leading" id="b5X-H8-4D0"/>
+                                    <constraint firstAttribute="trailing" secondItem="CSa-7M-0C2" secondAttribute="trailing" constant="8" id="h23-kR-Ifl"/>
+                                    <constraint firstAttribute="trailing" secondItem="2hu-gQ-4KM" secondAttribute="trailing" id="iWw-mt-MIK"/>
+                                    <constraint firstItem="CSa-7M-0C2" firstAttribute="top" secondItem="2hu-gQ-4KM" secondAttribute="bottom" constant="8" id="oKR-F2-nxt"/>
+                                    <constraint firstItem="CSa-7M-0C2" firstAttribute="leading" secondItem="sXe-pv-x55" secondAttribute="leading" constant="8" id="zRF-4P-xlj"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sXe-pv-x55" secondAttribute="trailing" id="0Kd-WW-0oq"/>
+                            <constraint firstItem="iWr-sl-G4e" firstAttribute="top" secondItem="sXe-pv-x55" secondAttribute="bottom" constant="-49" id="Hct-ZZ-5jK"/>
+                            <constraint firstItem="sXe-pv-x55" firstAttribute="leading" secondItem="gxw-rk-1V6" secondAttribute="leading" id="bFR-UV-Hmn"/>
+                            <constraint firstItem="sXe-pv-x55" firstAttribute="top" secondItem="w6z-f2-aOL" secondAttribute="bottom" constant="-64" id="e7S-Ni-I50"/>
+                            <constraint firstItem="sXe-pv-x55" firstAttribute="leading" secondItem="gxw-rk-1V6" secondAttribute="leadingMargin" constant="-16" id="w5W-En-fcF"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="productDescription" destination="HcP-rA-ybE" id="co6-cK-sjD"/>
+                        <outlet property="productImage" destination="2hu-gQ-4KM" id="UaS-cG-geB"/>
+                        <outlet property="productName" destination="CSa-7M-0C2" id="ew7-e9-VJd"/>
+                        <outlet property="scroller" destination="sXe-pv-x55" id="zOr-iG-1qq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kYg-Lg-VNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2184" y="-345"/>
         </scene>
         <!--Item-->
         <scene sceneID="2dF-oY-tWu">

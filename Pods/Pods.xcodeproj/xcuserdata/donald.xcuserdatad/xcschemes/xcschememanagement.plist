@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Locksmith-Locksmith.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Locksmith.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>518D1CF1D7B8D75260F9E7EB</key>
+		<key>1E73571B58B4FF2AA6D12D86</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93BD241FF13CAA8CDEA97C10</key>
+		<key>2B2A0F323DB90DD104067FAA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C29869C9C30C6F7089315A58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC9DC90E0A7CDC8A01E0D48B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

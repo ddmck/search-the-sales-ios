@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Alamofire
+import Locksmith
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    let (userDetails, error) = Locksmith.loadDataForUserAccount("myUserAccount")
+    Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
+      "Access-Token": userDetails!["Access-Token"]! as! String,
+      "Client": userDetails!["Client"]! as! String,
+      "Uid": userDetails!["Uid"]! as! String,
+      "Expiry": userDetails!["Expiry"]! as! String
+    ]
+
     return true
   }
 

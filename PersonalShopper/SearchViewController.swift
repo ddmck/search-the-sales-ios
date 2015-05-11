@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UISearchBarDelegate {
   let brain = APIBrain.sharedInstance
@@ -19,6 +20,13 @@ class SearchViewController: UIViewController,UIPickerViewDataSource,UIPickerView
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    
+    Alamofire.request(.GET, "http://localhost:3000/api/wishlist_items.json")
+      .responseJSON { (_,_,JSON,_) in
+        println(JSON)
+        
+    }
+
     // Do any additional setup after loading the view.
     
     genderPicker.dataSource = self

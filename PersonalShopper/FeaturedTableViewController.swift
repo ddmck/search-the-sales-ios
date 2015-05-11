@@ -15,6 +15,8 @@ class FeaturedTableViewController: UITableViewController {
   var products = Array<Product>()
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+
 
     fetchPageOfProducts()
     
@@ -27,6 +29,7 @@ class FeaturedTableViewController: UITableViewController {
   
   override func viewDidAppear(animated: Bool) {
     if (brain.changed) {
+      brain.changed = false
       brain.page = 1
       products = Array<Product>()
       self.tableView.reloadData()
@@ -178,5 +181,16 @@ class FeaturedTableViewController: UITableViewController {
   // Pass the selected object to the new view controller.
   }
   */
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if let cell = sender as? UITableViewCell {
+      let i = self.tableView.indexPathForCell(cell)!.row
+      if segue.identifier == "toProductDetail" {
+        let vc = segue.destinationViewController as! ProductDetailViewController
+        vc.hidesBottomBarWhenPushed = true
+        vc.data = products[i] as Product
+      }
+    }
+  }
   
 }

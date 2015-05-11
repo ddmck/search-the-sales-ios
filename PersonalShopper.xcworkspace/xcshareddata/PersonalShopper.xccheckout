@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A014DAD9-FCC5-447D-9F87-20C71071CA56</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PersonalShopper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D68F61EB4898505957CF1D11051DD3FB700D4A3D</key>
+		<string>github.com:ddmck/search-the-sales-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PersonalShopper.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D68F61EB4898505957CF1D11051DD3FB700D4A3D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:ddmck/search-the-sales-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D68F61EB4898505957CF1D11051DD3FB700D4A3D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D68F61EB4898505957CF1D11051DD3FB700D4A3D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PersonalShopper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
