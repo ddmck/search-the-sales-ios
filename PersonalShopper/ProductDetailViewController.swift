@@ -12,6 +12,7 @@ import Alamofire
 
 
 class ProductDetailViewController: UIViewController {
+  let basket = BasketBrain.sharedInstance
   var data: Product!
   
   @IBOutlet weak var productImage: UIImageView!
@@ -33,6 +34,11 @@ class ProductDetailViewController: UIViewController {
       println("value = \(value)")
       println("index = \(index)")
       println("picker = \(picker)")
+      
+      var bi = BasketItem(productID: self.data.id, sizeDescription: "\(value)")
+      
+      self.basket.items.append(bi)
+      println("\(self.basket.items)")
       return
     }, cancelBlock: {
       ActionStringCancelBlock in return

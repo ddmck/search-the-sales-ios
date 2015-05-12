@@ -14,6 +14,7 @@ import Locksmith
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   let brain = APIBrain()
+  let basket = BasketBrain()
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

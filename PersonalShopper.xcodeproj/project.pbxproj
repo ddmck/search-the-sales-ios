@@ -14,6 +14,8 @@
 		405AD36C1AF91E9600B0AF17 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405AD36B1AF91E9600B0AF17 /* ProductDetailViewController.swift */; };
 		408F6B3F1AF7C5B6003655D4 /* APIBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F6B3E1AF7C5B6003655D4 /* APIBrain.swift */; };
 		408F6B411AF8D580003655D4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F6B401AF8D580003655D4 /* SearchViewController.swift */; };
+		40A78AFF1B024E3200D616A9 /* BasketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A78AFE1B024E3200D616A9 /* BasketItem.swift */; };
+		40A78B011B024E8600D616A9 /* BasketBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A78B001B024E8600D616A9 /* BasketBrain.swift */; };
 		40DF23711AEF958C0021935A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF23701AEF958C0021935A /* AppDelegate.swift */; };
 		40DF23741AEF958C0021935A /* PersonalShopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40DF23721AEF958C0021935A /* PersonalShopper.xcdatamodeld */; };
 		40DF23761AEF958C0021935A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF23751AEF958C0021935A /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 		405AD36B1AF91E9600B0AF17 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		408F6B3E1AF7C5B6003655D4 /* APIBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBrain.swift; sourceTree = "<group>"; };
 		408F6B401AF8D580003655D4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		40A78AFE1B024E3200D616A9 /* BasketItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketItem.swift; sourceTree = "<group>"; };
+		40A78B001B024E8600D616A9 /* BasketBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketBrain.swift; sourceTree = "<group>"; };
 		40DF236B1AEF958C0021935A /* PersonalShopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalShopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DF236F1AEF958C0021935A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DF23701AEF958C0021935A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			children = (
 				400E14051AF23570003AD486 /* Product.swift */,
 				408F6B3E1AF7C5B6003655D4 /* APIBrain.swift */,
+				40A78AFE1B024E3200D616A9 /* BasketItem.swift */,
+				40A78B001B024E8600D616A9 /* BasketBrain.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -336,6 +342,8 @@
 				40DF23761AEF958C0021935A /* ViewController.swift in Sources */,
 				405AD36C1AF91E9600B0AF17 /* ProductDetailViewController.swift in Sources */,
 				408F6B411AF8D580003655D4 /* SearchViewController.swift in Sources */,
+				40A78AFF1B024E3200D616A9 /* BasketItem.swift in Sources */,
+				40A78B011B024E8600D616A9 /* BasketBrain.swift in Sources */,
 				400E14001AF13091003AD486 /* FeaturedTableViewController.swift in Sources */,
 				400E14031AF232F2003AD486 /* ProductTableViewCell.swift in Sources */,
 				40DF23711AEF958C0021935A /* AppDelegate.swift in Sources */,
