@@ -13,6 +13,6 @@ struct Product {
   let name: String
   let price: Double
   let image: String
-  
+  var sizes: Array<Dictionary<String, AnyObject>>?
   
 }

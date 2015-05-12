@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-ActionSheetPicker-3.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E73571B58B4FF2AA6D12D86</key>
+		<key>1FD742829CD68FA5970C04F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B2A0F323DB90DD104067FAA</key>
+		<key>2BFD3330E87A5B9F4E8158AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C29869C9C30C6F7089315A58</key>
+		<key>3130F4289410212ED062450D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC9DC90E0A7CDC8A01E0D48B</key>
+		<key>BC7B0FBA4102C462EE6B9898</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDF3BE6B73FF300B7DE73420</key>
 		<dict>
 			<key>primary</key>
 			<true/>

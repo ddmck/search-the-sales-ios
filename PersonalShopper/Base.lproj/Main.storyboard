@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8cd-Vn-Caq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8cd-Vn-Caq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -170,11 +170,23 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uy2-et-vbd">
+                                        <rect key="frame" x="8" y="466" width="584" height="30"/>
+                                        <state key="normal" title="Sizes">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sizeButtonPressed:" destination="2Mb-hW-b37" eventType="touchUpInside" id="4T0-Vu-2pe"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HcP-rA-ybE" firstAttribute="top" secondItem="CSa-7M-0C2" secondAttribute="bottom" constant="8" id="0j4-ya-uxE"/>
+                                    <constraint firstItem="uy2-et-vbd" firstAttribute="leading" secondItem="sXe-pv-x55" secondAttribute="leading" constant="8" id="2rS-ls-zHU"/>
                                     <constraint firstAttribute="centerX" secondItem="2hu-gQ-4KM" secondAttribute="centerX" id="9Tu-IY-htd"/>
                                     <constraint firstItem="2hu-gQ-4KM" firstAttribute="top" secondItem="sXe-pv-x55" secondAttribute="top" id="B8e-SJ-CBA"/>
+                                    <constraint firstAttribute="trailing" secondItem="uy2-et-vbd" secondAttribute="trailing" constant="8" id="Som-HJ-El0"/>
+                                    <constraint firstItem="uy2-et-vbd" firstAttribute="top" secondItem="HcP-rA-ybE" secondAttribute="bottom" constant="8" id="Uve-KH-sdn"/>
                                     <constraint firstItem="HcP-rA-ybE" firstAttribute="leading" secondItem="sXe-pv-x55" secondAttribute="leading" constant="8" id="Wtc-OR-yC4"/>
                                     <constraint firstAttribute="trailing" secondItem="HcP-rA-ybE" secondAttribute="trailing" constant="8" id="XJH-hv-rCH"/>
                                     <constraint firstItem="2hu-gQ-4KM" firstAttribute="leading" secondItem="sXe-pv-x55" secondAttribute="leading" id="b5X-H8-4D0"/>

@@ -126,7 +126,7 @@ class FeaturedTableViewController: UITableViewController {
               let name = p["name"]! as! String
               let price = (p["display_price"] as! NSString).doubleValue
               let image = p["image_url"]! as! String
-              self.products.append(Product(id: id, name: name, price: price, image: image))
+              self.products.append(Product(id: id, name: name, price: price, image: image, sizes: []))
             }
             dispatch_async(dispatch_get_main_queue()) {
               self.tableView.reloadData()

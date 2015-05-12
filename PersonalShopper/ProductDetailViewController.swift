@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
 import Alamofire
+
 
 class ProductDetailViewController: UIViewController {
   var data: Product!
@@ -16,6 +18,28 @@ class ProductDetailViewController: UIViewController {
   @IBOutlet weak var productName: UILabel!
   @IBOutlet weak var productDescription: UILabel!
   @IBOutlet weak var scroller: UIScrollView!
+  
+  @IBAction func sizeButtonPressed(sender: UIButton) {
+    println("pressed")
+    var sizesForPicker = Array<String>()
+    
+    for size in data.sizes! {
+      sizesForPicker.append(size["name"] as! String)
+    }
+    
+    var sizePicker = ActionSheetStringPicker(title: "Sizes", rows: sizesForPicker, initialSelection: 1, doneBlock: {
+      picker, index, value in
+      
+      println("value = \(value)")
+      println("index = \(index)")
+      println("picker = \(picker)")
+      return
+    }, cancelBlock: {
+      ActionStringCancelBlock in return
+    }, origin: sender.superview!.superview)
+    sizePicker.setDoneButton(UIBarButtonItem(title: "Add To Basket", style: UIBarButtonItemStyle.Plain, target: self, action: "Done:"))
+    sizePicker.showActionSheetPicker()
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,10 +63,12 @@ class ProductDetailViewController: UIViewController {
           
           println(JSON)
           if let response = JSON as? Dictionary<String, AnyObject> {
+            println(response["sizes"])
+            self.data.sizes  = response["sizes"]! as? Array<Dictionary<String, AnyObject>>
             println(response["description"])
             self.productDescription.text = response["description"]! as? String
             dispatch_async(dispatch_get_main_queue()) {
-              self.scroller.contentSize = CGSizeMake(self.view.frame.width, self.productName.frame.height + self.productImage.frame.height + self.productDescription.frame.height + 100)
+              self.scroller.contentSize = CGSizeMake(self.view.frame.width, self.productName.frame.height + self.productImage.frame.height + self.productDescription.frame.height + 300)
             }
           }
       }
