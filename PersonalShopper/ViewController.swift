@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     println("view did load")
-    Alamofire.request(.POST, "http://localhost:3000/api/auth/sign_in", parameters: ["email": "donald@searchthesales.com", "password": "Tetrahedral1"])
+    Alamofire.request(.POST, "http://localhost:3000/api/auth/sign_in", parameters: ["email": "ddmckendrick@gmail.com", "password": ""])
       .responseJSON { (_, res, JSON, _) in
         println(res)
         println(res!.allHeaderFields["access-token"])

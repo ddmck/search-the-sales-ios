@@ -9,6 +9,6 @@
 import Foundation
 
 struct BasketItem {
-  let productID: Int
+  let product: Product
   let sizeDescription: String
 }

@@ -28,14 +28,14 @@ class ProductDetailViewController: UIViewController {
       sizesForPicker.append(size["name"] as! String)
     }
     
-    var sizePicker = ActionSheetStringPicker(title: "Sizes", rows: sizesForPicker, initialSelection: 1, doneBlock: {
+    var sizePicker = ActionSheetStringPicker(title: "Sizes", rows: sizesForPicker, initialSelection: 0, doneBlock: {
       picker, index, value in
       
       println("value = \(value)")
       println("index = \(index)")
       println("picker = \(picker)")
       
-      var bi = BasketItem(productID: self.data.id, sizeDescription: "\(value)")
+      var bi = BasketItem(product: self.data, sizeDescription: "\(value)")
       
       self.basket.items.append(bi)
       println("\(self.basket.items)")

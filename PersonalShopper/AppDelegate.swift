@@ -13,6 +13,7 @@ import Locksmith
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  let brandColor = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
   let brain = APIBrain()
   let basket = BasketBrain()
   var window: UIWindow?
@@ -26,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       "Uid": userDetails!["Uid"]! as! String,
       "Expiry": userDetails!["Expiry"]! as! String
     ]
+    println(userDetails)
+  
 
     return true
   }
