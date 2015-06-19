@@ -118,7 +118,7 @@ class BasketTableViewController: UITableViewController {
   }
   
   func getStoreInfo(store:Int) {
-    Alamofire.request(.GET, "http://localhost:3000/stores/\(store).json")
+    Alamofire.request(.GET, "\(GlobalConstants.backendURL)stores/\(store).json")
       .responseJSON { (_,_,JSON,_) in
         println(JSON)
         if let response = JSON as? Dictionary<String, AnyObject> {

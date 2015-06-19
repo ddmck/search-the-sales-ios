@@ -26,7 +26,7 @@ private func dateFormatter() -> NSDateFormatter {
 
 func saveMessage(message: String, userID: String) {
   
-  Alamofire.request(.POST, "http://localhost:3000/api/messages.json", parameters: ["message": ["text": message, "user_id": userID.toInt()!]])
+  Alamofire.request(.POST, "\(GlobalConstants.backendURL)api/messages.json", parameters: ["message": ["text": message, "user_id": userID.toInt()!]])
     .responseJSON { (_,_,JSON,_) in
       println(JSON)
     }
@@ -45,7 +45,7 @@ private func jsonToMessage(json: Dictionary<String, AnyObject>) -> Message {
 }
 
 func fetchMessages(callback: ([Message]) -> ()) {
-  Alamofire.request(.GET, "http://localhost:3000/api/messages.json")
+  Alamofire.request(.GET, "\(GlobalConstants.backendURL)api/messages.json")
     .responseJSON  { (_,_,JSON,_) in
       println(JSON)
       var messages = Array<Message>()

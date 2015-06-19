@@ -28,7 +28,7 @@ class AuthenticationViewController: UIViewController {
   }
   
   @IBAction func SignInButtonPressed(sender: UIButton) {
-    Alamofire.request(.POST, "http://localhost:3000/api/auth/sign_in", parameters: ["email": emailInput.text, "password": passwordInput.text])
+    Alamofire.request(.POST, "\(GlobalConstants.backendURL)api/auth/sign_in", parameters: ["email": emailInput.text, "password": passwordInput.text])
       .responseJSON { (_, res, JSON, _) in
         println(res)
         println(JSON)
@@ -40,7 +40,7 @@ class AuthenticationViewController: UIViewController {
           println(json["id"])
           println("end of JSON")
           var id = json["data"]!["id"] as? NSNumber
-          Locksmith.saveData([
+          Locksmith.updateData([
             "Access-Token": res!.allHeaderFields["access-token"]! as! String,
             "Client": res!.allHeaderFields["client"]! as! String,
             "Uid": res!.allHeaderFields["uid"]! as! String,
@@ -58,12 +58,16 @@ class AuthenticationViewController: UIViewController {
           "Expiry": userDetails!["Expiry"]! as! String
         ]
       
-        Alamofire.request(.GET, "http://localhost:3000/api/wishlist_items.json")
+        Alamofire.request(.GET, "\(GlobalConstants.backendURL)api/wishlist_items.json")
           .responseJSON { (_,_,JSON,_) in
             println(JSON)
             
         }
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabVC = storyboard.instantiateViewControllerWithIdentifier("TabViewController") as! UIViewController
+        
+        self.presentViewController(tabVC, animated: true, completion: nil)
     }
     
   }

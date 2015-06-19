@@ -58,38 +58,44 @@ class FeaturedTableViewController: UITableViewController {
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-  let cell = tableView.dequeueReusableCellWithIdentifier("ProductCell", forIndexPath: indexPath) as! ProductTableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ProductCell", forIndexPath: indexPath) as! ProductTableViewCell
     let product = products[indexPath.row]
     cell.nameLabel.text = product.name
     cell.priceLabel.text = "£ \(product.price)"
     cell.tag = indexPath.row
-    cell.productImage.image = nil
-    cell.productImage.alpha = 0
-    let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-    dispatch_async(dispatch_get_global_queue(priority, 0)) {
-      
-      let url = NSURL(string: product.image)
-      if let data = NSData(contentsOfURL: url!) { //make sure your image in this url does exist, otherwise unwrap in a if let check
-        dispatch_async(dispatch_get_main_queue()) {
+    
+    
+
+    let url = NSURL(string: product.image)
+    
+    cell.productImage!.sd_setImageWithURL(url)
+    //    let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+//    dispatch_async(dispatch_get_global_queue(priority, 0)) {
+//      
+//      let url = NSURL(string: product.image)
+//      if let data = NSData(contentsOfURL: url!) { //make sure your image in this url does exist, otherwise unwrap in a if let check
+//        dispatch_async(dispatch_get_main_queue()) {
           let visibleCells = self.tableView.visibleCells()
           var visibleCellIds = visibleCells.map({$0.tag}) as Array<Int>
-          visibleCellIds.append(visibleCellIds.last! + 1)
-          visibleCellIds.append(visibleCellIds.last! + 1)
+//          visibleCellIds.append(visibleCellIds.last! + 1)
+//          visibleCellIds.append(visibleCellIds.last! + 1)
           println(visibleCellIds)
           
           println(cell.tag)
           if contains(visibleCellIds, cell.tag) {
-            cell.productImage.image = UIImage(data: data)
-            UIView.transitionWithView(cell.productImage,
-              duration: 0.25,
-              options: UIViewAnimationOptions.TransitionCrossDissolve,
-              animations: { cell.productImage.alpha = 1 },
-              completion: nil)
-          }
-          
-        }
-      }
+            cell.productImage!.sd_setImageWithURL(url)
     }
+//            UIView.transitionWithView(cell.productImage,
+//              duration: 0.25,
+//              options: UIViewAnimationOptions.TransitionCrossDissolve,
+//              animations: { cell.productImage.alpha = 1 },
+//              completion: nil)
+//          }
+//          
+//        }
+//      }
+//  }
+    
     return cell
   }
   
@@ -115,7 +121,7 @@ class FeaturedTableViewController: UITableViewController {
       if self.brain.searchString != "" {
         params["search_string"] = self.brain.searchString
       }
-      Alamofire.request(.GET, "http://localhost:3000/products.json", parameters: params)
+      Alamofire.request(.GET, "\(GlobalConstants.backendURL)products.json", parameters: params)
         .responseJSON { (_, _, JSON, _) in
           if let response = JSON as? Array<Dictionary<String, AnyObject>> {
 //            println(response)
@@ -125,9 +131,10 @@ class FeaturedTableViewController: UITableViewController {
               let id = p["id"]! as! Int
               let storeID = p["store_id"]! as! Int
               let name = p["name"]! as! String
+              let brandName = p["brand_name"]! as! String
               let price = (p["display_price"] as! NSString).doubleValue
               let image = p["image_url"]! as! String
-              self.products.append(Product(id: id, storeID: storeID, name: name, price: price, image: image, sizes: []))
+              self.products.append(Product(id: id, storeID: storeID, name: name, brandName: brandName, price: price, image: image, sizes: []))
             }
             dispatch_async(dispatch_get_main_queue()) {
               self.tableView.reloadData()

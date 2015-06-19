@@ -8,3 +8,4 @@
 
 
 #import "JSQMessagesViewController/JSQMessages.h"
+#import "SDWebImage/UIImageView+WebCache.h"

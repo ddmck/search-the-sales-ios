@@ -63,7 +63,7 @@ class ProductDetailViewController: UIViewController {
     let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
     dispatch_async(dispatch_get_global_queue(priority, 0)) {
       
-      let url = "http://localhost:3000/products/\(self.data.id).json"
+      let url = "\(GlobalConstants.backendURL)products/\(self.data.id).json"
       Alamofire.request(.GET, url)
         .responseJSON { (_, _, JSON, _) in
           
@@ -100,7 +100,7 @@ class ProductDetailViewController: UIViewController {
   func saveProduct(button: UIBarButtonItem){
     println("TODO: SET UP CODE TO SAVE FAVE")
     
-    Alamofire.request(.POST, "http://localhost:3000/api/wishlist_items.json", parameters: ["params": ["product_id": self.data.id]])
+    Alamofire.request(.POST, "\(GlobalConstants.backendURL)api/wishlist_items.json", parameters: ["params": ["product_id": self.data.id]])
       .responseJSON { (_,_,JSON,_) in
         println(JSON)
         

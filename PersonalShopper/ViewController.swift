@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     println("view did load")
-    Alamofire.request(.POST, "http://localhost:3000/api/auth/sign_in", parameters: ["email": "ddmckendrick@gmail.com", "password": ""])
+    Alamofire.request(.POST, "\(GlobalConstants.backendURL)api/auth/sign_in", parameters: ["email": "ddmckendrick@gmail.com", "password": ""])
       .responseJSON { (_, res, JSON, _) in
         println(res)
         println(res!.allHeaderFields["access-token"])
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
           "Expiry": userDetails!["Expiry"]! as! String
         ]
         
-        Alamofire.request(.GET, "http://localhost:3000/api/wishlist_items.json")
+        Alamofire.request(.GET, "\(GlobalConstants.backendURL)api/wishlist_items.json")
           .responseJSON { (_,_,JSON,_) in
             println(JSON)
             

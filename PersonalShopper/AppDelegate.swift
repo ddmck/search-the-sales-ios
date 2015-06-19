@@ -13,6 +13,7 @@ import Locksmith
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  
   let brandColor = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
   let brain = APIBrain()
   let basket = BasketBrain()
@@ -20,16 +21,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    
+    
+    
     let (userDetails, error) = Locksmith.loadDataForUserAccount("myUserAccount")
-    Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
-      "Access-Token": userDetails!["Access-Token"]! as! String,
-      "Client": userDetails!["Client"]! as! String,
-      "Uid": userDetails!["Uid"]! as! String,
-      "Expiry": userDetails!["Expiry"]! as! String
-    ]
     println(userDetails)
+    if userDetails != nil {
+    
+      Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
+        "Access-Token": userDetails!["Access-Token"]! as! String,
+        "Client": userDetails!["Client"]! as! String,
+        "Uid": userDetails!["Uid"]! as! String,
+        "Expiry": userDetails!["Expiry"]! as! String
+      ]
+      
+      Alamofire.request(.GET, "\(GlobalConstants.backendURL)api/auth/validate_token")
+        .responseJSON {(_,res,JSON,_) in
+          var initialVC: UIViewController
+          if (res?.statusCode == 200) {
+            initialVC = storyboard.instantiateViewControllerWithIdentifier("TabViewController") as! UIViewController
+          } else {
+            initialVC = storyboard.instantiateViewControllerWithIdentifier("LogInViewController") as! UIViewController
+          }
+          self.window?.rootViewController = initialVC
+          self.window?.makeKeyAndVisible()
+      }
+      
+    } else {
+      var initialVC: UIViewController
+      initialVC = storyboard.instantiateViewControllerWithIdentifier("LogInViewController") as! UIViewController
+      self.window?.rootViewController = initialVC
+      self.window?.makeKeyAndVisible()
+    }
   
-
+    
+    
     return true
   }
 

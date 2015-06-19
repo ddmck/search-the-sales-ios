@@ -16,12 +16,13 @@ class ChatViewController : JSQMessagesViewController {
   var messages: [JSQMessage] = []
   let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 142/255, green: 9/255, blue: 52/255, alpha: 1))
   let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
+  let (userDetails, error) = Locksmith.loadDataForUserAccount("myUserAccount")
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
     println(UIColor.jsq_messageBubbleLightGrayColor())
-    let (userDetails, error) = Locksmith.loadDataForUserAccount("myUserAccount")
-    // Do any additional setup after loading the view
+        // Do any additional setup after loading the view
     self.inputToolbar.contentView.leftBarButtonItem = nil
     senderId = userDetails!["id"]! as! String
     senderDisplayName = userDetails!["Name"]! as! String
@@ -53,7 +54,7 @@ class ChatViewController : JSQMessagesViewController {
   override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
     var data = self.messages[indexPath.row]
     println("hello")
-    if data.senderId == "1" {
+    if (data.senderId == userDetails!["id"]! as! String) {
       return outgoingBubble
     } else {
       return incomingBubble

@@ -18,10 +18,11 @@ class SearchViewController: UIViewController,UIPickerViewDataSource,UIPickerView
   let categoryData = [["name":"shoes",  "id":"1" ], ["name":"accessories",  "id":"2" ], ["name":"jackets",  "id":"3" ], ["name":"shorts",  "id":"4" ], ["name":"suits",  "id":"5" ], ["name":"underwear",  "id":"6" ], ["name":"sweats",  "id":"7" ], ["name":"knitwear",  "id":"8" ], ["name":"shirts",  "id":"9" ], ["name":"tops",  "id":"10" ], ["name":"tees",  "id":"11" ], ["name":"bags",  "id":"12" ], ["name":"jeans",  "id":"13" ], ["name":"trousers",  "id":"14" ], ["name":"polos",  "id":"15" ], ["name":"hoodies",  "id":"16" ], ["name":"swimwear",  "id":"17" ], ["name":"dresses",  "id":"18" ], ["name":"blouses",  "id":"19" ], ["name":"skirts",  "id":"20" ], ["name":"playsuits",  "id":"21" ], ["name":"lingerie",  "id":"22" ]] as [Dictionary<String,String>]
   
   override func viewDidLoad() {
+    searchInput.tintColor = UIColor(red: 142/255, green: 9/255, blue: 52/255, alpha: 1)
     super.viewDidLoad()
     
     
-    Alamofire.request(.GET, "http://localhost:3000/api/wishlist_items.json")
+    Alamofire.request(.GET, "\(GlobalConstants.backendURL)api/wishlist_items.json")
       .responseJSON { (_,_,JSON,_) in
         println(JSON)
         
