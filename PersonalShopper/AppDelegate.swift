@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Alamofire
 import Locksmith
+//import Socket_IO_Client_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -58,8 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       self.window?.makeKeyAndVisible()
     }
   
-    
-    
     return true
   }
 

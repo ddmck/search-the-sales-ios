@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Socket.IO-Client-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>037A3B1BF3FAE0269E880675</key>
+		<key>2B817D63F9485794C821BE4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E93D195D4D8863DB38EA0A8</key>
+		<key>32498BF45EAB4CD0744F0D50</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48AF04236D51AA98AFD7727A</key>
+		<key>458901765DEE803EB537DFC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>762FFF43D8F04E7BA508D872</key>
+		<key>502D1DC49E52EE2E70D50475</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>81E8DAC43B659273211DB170</key>
+		<key>51F1E4FEAE9AC14DE94CCCC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82CABC05FBD0D4A78EC010E2</key>
+		<key>66B1B3C64C94621D7AAAFA71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5CA69BD4967C0BCF8196E8C</key>
+		<key>6AA472F12CDEA21A98B4F63D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E875313ECAD61B48BC9A7D08</key>
+		<key>83D282D6F3BFA2474731AB70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7D20611EC1A1C08046A8CC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

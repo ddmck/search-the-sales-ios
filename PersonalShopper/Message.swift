@@ -34,20 +34,17 @@ func saveMessage(message: String, userID: String) {
 }
 
 private func jsonToMessage(json: Dictionary<String, AnyObject>) -> Message {
-  println(json)
   let date = dateFormatter().dateFromString(json["created_at"]! as! String)
-  var sndr = json["sender_id"]!
+  var sndr = json["sender_id"]! as! Int
   let sender = "\(sndr)"
   let senderName = json["sender_name"]! as! String
   let text = json["text"]! as! String
-  println("\(date) \(sender) \(text)")
   return Message(message: text, senderID: sender, senderName: senderName, date: date!)
 }
 
 func fetchMessages(callback: ([Message]) -> ()) {
   Alamofire.request(.GET, "\(GlobalConstants.backendURL)api/messages.json")
     .responseJSON  { (_,_,JSON,_) in
-      println(JSON)
       var messages = Array<Message>()
       
       if let array = JSON as? Array<Dictionary<String, AnyObject>> {

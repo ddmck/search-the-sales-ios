@@ -8,6 +8,7 @@ PODS:
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
+  - Socket.IO-Client-Swift (2.3.4)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 1.3.4)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - JSQMessagesViewController (~> 7.0)
   - Locksmith
   - SDWebImage
+  - Socket.IO-Client-Swift
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 9fd0713777fad3a3f3b89ea58c75d59ccdef28f4
@@ -23,5 +25,6 @@ SPEC CHECKSUMS:
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Locksmith: 770f6c5c6e5c5c712d1f00e709c62b8a7240c716
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  Socket.IO-Client-Swift: 8e448ad6ffc25f1dd31dc92d40d86af815b20432
 
 COCOAPODS: 0.36.3
