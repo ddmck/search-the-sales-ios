@@ -16,5 +16,5 @@ struct Product {
   let price: Double
   let image: String
   var sizes: Array<Dictionary<String, AnyObject>>?
-  
+  let url: String
 }

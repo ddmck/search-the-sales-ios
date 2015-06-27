@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   let brandColor = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
   let brain = APIBrain()
-  let basket = BasketBrain()
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

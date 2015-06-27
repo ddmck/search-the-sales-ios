@@ -130,7 +130,7 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
       }
       Alamofire.request(.GET, "\(GlobalConstants.backendURL)products.json", parameters: params)
         .responseJSON { (_, _, JSON, _) in
-          if let response = JSON as? Array<Dictionary<String, AnyObject>> {
+          if let response = JSON!["products"] as? Array<Dictionary<String, AnyObject>> {
             //            println(response)
             self.brain.page += 1
             
@@ -141,7 +141,9 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
               let brandName = p["brand_name"]! as! String
               let price = (p["display_price"] as! NSString).doubleValue
               let image = p["image_url"]! as! String
-              self.products.append(Product(id: id, storeID: storeID, name: name, brandName: brandName, price: price, image: image, sizes: []))
+              let url = p["url"]! as! String
+              
+              self.products.append(Product(id: id, storeID: storeID, name: name, brandName: brandName, price: price, image: image, sizes: [], url: url))
             }
             dispatch_async(dispatch_get_main_queue()) {
               self.collectionView!.reloadData()

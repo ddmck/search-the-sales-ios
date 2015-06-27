@@ -12,13 +12,24 @@ import Alamofire
 
 
 class ProductDetailViewController: UIViewController {
-  let basket = BasketBrain.sharedInstance
   var data: Product!
   
   @IBOutlet weak var productImage: UIImageView!
   @IBOutlet weak var productName: UILabel!
   @IBOutlet weak var productDescription: UILabel!
   @IBOutlet weak var scroller: UIScrollView!
+  @IBAction func addToBasketPressed(sender: UIButton) {
+    println("pressed")
+    let webview = UIWebView(frame: CGRect(x: 0, y: 0, width: 0, height: 0));
+    let url = NSURL (string: "http://ub.io/bertie@searchthesales.com/\(data.url)");
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    let vc = storyboard.instantiateViewControllerWithIdentifier("ProductBasketVC") as! ProductBasketViewController
+
+    vc.url = NSURL (string: "http://ub.io/bertie@searchthesales.com/\(data.url)")
+    self.navigationController?.pushViewController(vc, animated: true)
+  }
   
   @IBAction func sizeButtonPressed(sender: UIButton) {
     println("pressed")
@@ -35,10 +46,6 @@ class ProductDetailViewController: UIViewController {
       println("index = \(index)")
       println("picker = \(picker)")
       
-      var bi = BasketItem(product: self.data, sizeDescription: "\(value)")
-      
-      self.basket.items.append(bi)
-      println("\(self.basket.items)")
       return
     }, cancelBlock: {
       ActionStringCancelBlock in return
@@ -53,7 +60,7 @@ class ProductDetailViewController: UIViewController {
     self.productName.text = data.name.capitalizedString
     getAndSetImage()
     getFullJSON()
-    self.title = "£ \(data.price)"
+    self.title = data.name
     let rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveProduct:")
     navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: true)
     // Do any additional setup after loading the view.
