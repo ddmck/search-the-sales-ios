@@ -16,6 +16,10 @@ class APIBrain {
   var searchString = String()
   var filters = [String: AnyObject]()
   var changed: Bool
+  var categories = [[String: AnyObject]]()
+  var brands = [[String: AnyObject]]()
+  var colors = [[String: AnyObject]]()
+  var genders = [["name": "Mens", "id": 1], ["name": "Womens", "id": 2]]
   
   init(){
     self.changed = true

@@ -35,6 +35,7 @@ func saveMessage(message: String, userID: String) {
 
 private func jsonToMessage(json: Dictionary<String, AnyObject>) -> Message {
   let date = dateFormatter().dateFromString(json["created_at"]! as! String)
+  println(date)
   var sndr = json["sender_id"]! as! Int
   let sender = "\(sndr)"
   let senderName = json["sender_name"]! as! String

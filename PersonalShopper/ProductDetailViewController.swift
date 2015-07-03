@@ -17,7 +17,7 @@ class ProductDetailViewController: UIViewController {
   @IBOutlet weak var productImage: UIImageView!
   @IBOutlet weak var productName: UILabel!
   @IBOutlet weak var productDescription: UILabel!
-  @IBOutlet weak var scroller: UIScrollView!
+  
   @IBAction func addToBasketPressed(sender: UIButton) {
     println("pressed")
     let webview = UIWebView(frame: CGRect(x: 0, y: 0, width: 0, height: 0));
@@ -46,6 +46,8 @@ class ProductDetailViewController: UIViewController {
       println("index = \(index)")
       println("picker = \(picker)")
       
+      
+      
       return
     }, cancelBlock: {
       ActionStringCancelBlock in return
@@ -63,6 +65,8 @@ class ProductDetailViewController: UIViewController {
     self.title = data.name
     let rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveProduct:")
     navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: true)
+    
+    Alamofire.request(.POST, "https://api.ub.io/products/crawl", parameters: ["apiKey": GlobalConstants.ubAPIKey, "url": data.url])
     // Do any additional setup after loading the view.
   }
   
@@ -81,7 +85,6 @@ class ProductDetailViewController: UIViewController {
             println(response["description"])
             self.productDescription.text = response["description"]! as? String
             dispatch_async(dispatch_get_main_queue()) {
-              self.scroller.contentSize = CGSizeMake(self.view.frame.width, self.productName.frame.height + self.productImage.frame.height + self.productDescription.frame.height + 300)
             }
           }
       }
@@ -97,7 +100,7 @@ class ProductDetailViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
           
           self.productImage.image = UIImage(data: imgdata)
-          self.scroller.contentSize = CGSizeMake(self.view.frame.width, self.productName.frame.height + self.productImage.frame.height + self.productDescription.frame.height + 100)
+      
         }
       }
     }

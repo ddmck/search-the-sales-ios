@@ -16,7 +16,7 @@ import Locksmith
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   let brandColor = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
-  let brain = APIBrain()
+  let brain = APIBrain.sharedInstance
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -24,9 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    
-    
-    
     
     let (userDetails, error) = Locksmith.loadDataForUserAccount("myUserAccount")
     println(userDetails)
@@ -56,6 +53,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       initialVC = storyboard.instantiateViewControllerWithIdentifier("LogInViewController") as! UIViewController
       self.window?.rootViewController = initialVC
       self.window?.makeKeyAndVisible()
+    }
+    
+    Alamofire.request(.GET, "\(GlobalConstants.backendURL)categories.json")
+      .responseJSON {(_,_,JSON,_) in
+        println(JSON)
+        if let data = JSON as? Array<Dictionary<String, AnyObject>> {
+          self.brain.categories = data;
+        }
+    }
+    
+    Alamofire.request(.GET, "\(GlobalConstants.backendURL)brands.json")
+      .responseJSON {(_,_,JSON,_) in
+        println(JSON)
+        if let data = JSON as? Array<Dictionary<String, AnyObject>> {
+          self.brain.brands = data;
+        }
+    }
+    
+    Alamofire.request(.GET, "\(GlobalConstants.backendURL)colors.json")
+      .responseJSON {(_,_,JSON,_) in
+        println(JSON)
+        if let data = JSON as? Array<Dictionary<String, AnyObject>> {
+          self.brain.colors = data;
+        }
     }
   
     return true

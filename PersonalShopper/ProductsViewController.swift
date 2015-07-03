@@ -50,6 +50,16 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
   }
   
+  override func viewDidAppear(animated: Bool) {
+    if (brain.changed) {
+      brain.changed = false
+      brain.page = 1
+      products = Array<Product>()
+      self.collectionView!.reloadData()
+      fetchPageOfProducts()
+    }
+  }
+  
   
   /*
   // MARK: - Navigation
