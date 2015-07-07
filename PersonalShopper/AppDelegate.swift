@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Alamofire
 import Locksmith
+import Fabric
+import Crashlytics
 //import Socket_IO_Client_Swift
 
 @UIApplicationMain
@@ -20,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    Fabric.with([Crashlytics()])
+
     // Override point for customization after application launch.
     UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     

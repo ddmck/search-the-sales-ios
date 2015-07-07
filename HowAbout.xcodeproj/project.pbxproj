@@ -22,6 +22,8 @@
 		401DFDED1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 401DFDEB1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.xib */; };
 		401DFDEF1B4A7F9600861CC1 /* RecommendationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401DFDEE1B4A7F9600861CC1 /* RecommendationItem.swift */; };
 		401DFDF11B4A8ABB00861CC1 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401DFDF01B4A8ABB00861CC1 /* Recommendation.swift */; };
+		401DFDF51B4C12E700861CC1 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401DFDF31B4C12E700861CC1 /* Fabric.framework */; };
+		401DFDF61B4C12E700861CC1 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401DFDF41B4C12E700861CC1 /* Crashlytics.framework */; };
 		403921321B46C7D6004114EE /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403921311B46C7D6004114EE /* RecommendationsViewController.swift */; };
 		403921351B46CA5D004114EE /* RecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403921331B46CA5D004114EE /* RecommendationCollectionViewCell.swift */; };
 		403921361B46CA5D004114EE /* RecommendationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403921341B46CA5D004114EE /* RecommendationCollectionViewCell.xib */; };
@@ -76,6 +78,8 @@
 		401DFDEB1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		401DFDEE1B4A7F9600861CC1 /* RecommendationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationItem.swift; sourceTree = "<group>"; };
 		401DFDF01B4A8ABB00861CC1 /* Recommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		401DFDF31B4C12E700861CC1 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		401DFDF41B4C12E700861CC1 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		403921311B46C7D6004114EE /* RecommendationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
 		403921331B46CA5D004114EE /* RecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		403921341B46CA5D004114EE /* RecommendationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				4019186C1B34B39300674275 /* CFNetwork.framework in Frameworks */,
 				4019186A1B34B38A00674275 /* libicucore.dylib in Frameworks */,
 				17CD60DE20F75C5B7ED6EEA4 /* Pods.framework in Frameworks */,
+				401DFDF51B4C12E700861CC1 /* Fabric.framework in Frameworks */,
+				401DFDF61B4C12E700861CC1 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +203,8 @@
 		40DF23621AEF958C0021935A = {
 			isa = PBXGroup;
 			children = (
+				401DFDF31B4C12E700861CC1 /* Fabric.framework */,
+				401DFDF41B4C12E700861CC1 /* Crashlytics.framework */,
 				40DF236D1AEF958C0021935A /* PersonalShopper */,
 				40DF23861AEF958D0021935A /* PersonalShopperTests */,
 				40DF236C1AEF958C0021935A /* Products */,
@@ -281,6 +289,7 @@
 				40DF23691AEF958C0021935A /* Resources */,
 				BE0C10F1E2A6B855B356285E /* Embed Pods Frameworks */,
 				915FF915D6580E5B336CAF1F /* Copy Pods Resources */,
+				401DFDF21B4C120E00861CC1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -373,6 +382,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		401DFDF21B4C120E00861CC1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 98117923ffbc165394f34b9ec28b821afba64292 c090e6c7c1dfff5d407df6580412893aef50b7ecc44a956b1e198f0235a9c737";
+		};
 		915FF915D6580E5B336CAF1F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,6 +602,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PersonalShopper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -596,6 +622,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PersonalShopper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
