@@ -13,13 +13,15 @@ import Alamofire
 
 class ProductDetailViewController: UIViewController {
   var data: Product!
+  let formatter = NSNumberFormatter()
   
   @IBOutlet weak var productImage: UIImageView!
   @IBOutlet weak var productName: UILabel!
   @IBOutlet weak var productDescription: UILabel!
   
   @IBAction func addToBasketPressed(sender: UIButton) {
-    println("pressed")
+    
+    
     let webview = UIWebView(frame: CGRect(x: 0, y: 0, width: 0, height: 0));
     let url = NSURL (string: "http://ub.io/bertie@searchthesales.com/\(data.url)");
     
@@ -32,7 +34,6 @@ class ProductDetailViewController: UIViewController {
   }
   
   @IBAction func sizeButtonPressed(sender: UIButton) {
-    println("pressed")
     var sizesForPicker = Array<String>()
     
     for size in data.sizes! {
@@ -62,7 +63,10 @@ class ProductDetailViewController: UIViewController {
     self.productName.text = data.name.capitalizedString
     getAndSetImage()
     getFullJSON()
-    self.title = data.name
+    formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+    formatter.locale = NSLocale(localeIdentifier: "en_GB")
+
+    self.title = formatter.stringFromNumber(data.price)
     let rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveProduct:")
     navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: true)
     

@@ -17,12 +17,18 @@
 		4019186C1B34B39300674275 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4019186B1B34B39300674275 /* CFNetwork.framework */; };
 		4019186E1B34B39A00674275 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4019186D1B34B39A00674275 /* Security.framework */; };
 		401918701B34B3A800674275 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4019186F1B34B3A800674275 /* SystemConfiguration.framework */; };
+		401DFDE91B49D98500861CC1 /* RecommendationItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401DFDE81B49D98500861CC1 /* RecommendationItemsCollectionViewController.swift */; };
+		401DFDEC1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401DFDEA1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.swift */; };
+		401DFDED1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 401DFDEB1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.xib */; };
+		401DFDEF1B4A7F9600861CC1 /* RecommendationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401DFDEE1B4A7F9600861CC1 /* RecommendationItem.swift */; };
+		401DFDF11B4A8ABB00861CC1 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401DFDF01B4A8ABB00861CC1 /* Recommendation.swift */; };
+		403921321B46C7D6004114EE /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403921311B46C7D6004114EE /* RecommendationsViewController.swift */; };
+		403921351B46CA5D004114EE /* RecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403921331B46CA5D004114EE /* RecommendationCollectionViewCell.swift */; };
+		403921361B46CA5D004114EE /* RecommendationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403921341B46CA5D004114EE /* RecommendationCollectionViewCell.xib */; };
 		403C98801B3ED93200998523 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403C987F1B3ED93200998523 /* BasketViewController.swift */; };
 		40401BB21B3EE58F005C75DA /* ProductBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40401BB11B3EE58F005C75DA /* ProductBasketViewController.swift */; };
 		40401BB41B415666005C75DA /* ManhattanDarling-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40401BB31B415666005C75DA /* ManhattanDarling-Regular.ttf */; };
 		40401BB61B415671005C75DA /* ManhattanDarlingExtras.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40401BB51B415671005C75DA /* ManhattanDarlingExtras.ttf */; };
-		40401BBA1B41A24C005C75DA /* RecommendationsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40401BB91B41A24C005C75DA /* RecommendationsCollectionViewController.swift */; };
-		40401BBC1B41A309005C75DA /* RecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40401BBB1B41A309005C75DA /* RecommendationCollectionViewCell.swift */; };
 		405AD36C1AF91E9600B0AF17 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405AD36B1AF91E9600B0AF17 /* ProductDetailViewController.swift */; };
 		408E5B1C1B331ED5007EFDF2 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5B1B1B331ED5007EFDF2 /* GlobalConstants.swift */; };
 		408E5B1E1B34303F007EFDF2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E5B1D1B34303F007EFDF2 /* SignUpViewController.swift */; };
@@ -65,12 +71,18 @@
 		4019186B1B34B39300674275 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		4019186D1B34B39A00674275 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4019186F1B34B3A800674275 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		401DFDE81B49D98500861CC1 /* RecommendationItemsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationItemsCollectionViewController.swift; sourceTree = "<group>"; };
+		401DFDEA1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		401DFDEB1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		401DFDEE1B4A7F9600861CC1 /* RecommendationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationItem.swift; sourceTree = "<group>"; };
+		401DFDF01B4A8ABB00861CC1 /* Recommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		403921311B46C7D6004114EE /* RecommendationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
+		403921331B46CA5D004114EE /* RecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
+		403921341B46CA5D004114EE /* RecommendationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationCollectionViewCell.xib; sourceTree = "<group>"; };
 		403C987F1B3ED93200998523 /* BasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		40401BB11B3EE58F005C75DA /* ProductBasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductBasketViewController.swift; sourceTree = "<group>"; };
 		40401BB31B415666005C75DA /* ManhattanDarling-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ManhattanDarling-Regular.ttf"; path = "../../../../Downloads/Manhattan Darling/Manhattan Darling/TTF/ManhattanDarling-Regular.ttf"; sourceTree = "<group>"; };
 		40401BB51B415671005C75DA /* ManhattanDarlingExtras.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ManhattanDarlingExtras.ttf; path = "../../../../Downloads/Manhattan Darling/Manhattan Darling/TTF/ManhattanDarlingExtras.ttf"; sourceTree = "<group>"; };
-		40401BB91B41A24C005C75DA /* RecommendationsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationsCollectionViewController.swift; sourceTree = "<group>"; };
-		40401BBB1B41A309005C75DA /* RecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		405AD36B1AF91E9600B0AF17 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		408E5B1B1B331ED5007EFDF2 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		408E5B1D1B34303F007EFDF2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +159,8 @@
 				408E5B1F1B344DD5007EFDF2 /* SettingsViewController.swift */,
 				403C987F1B3ED93200998523 /* BasketViewController.swift */,
 				40401BB11B3EE58F005C75DA /* ProductBasketViewController.swift */,
-				40401BB91B41A24C005C75DA /* RecommendationsCollectionViewController.swift */,
+				403921311B46C7D6004114EE /* RecommendationsViewController.swift */,
+				401DFDE81B49D98500861CC1 /* RecommendationItemsCollectionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -159,7 +172,10 @@
 				409ED4281B25F11000FF6720 /* ProductCollectionViewCell.swift */,
 				400205A01B2F2CDE00D21CA0 /* NewProductCollectionViewCell.swift */,
 				400205A11B2F2CDE00D21CA0 /* NewProductCollectionViewCell.xib */,
-				40401BBB1B41A309005C75DA /* RecommendationCollectionViewCell.swift */,
+				403921331B46CA5D004114EE /* RecommendationCollectionViewCell.swift */,
+				403921341B46CA5D004114EE /* RecommendationCollectionViewCell.xib */,
+				401DFDEA1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.swift */,
+				401DFDEB1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -172,6 +188,8 @@
 				40915F891B0A3486002340AC /* Store.swift */,
 				40915F901B137AAE002340AC /* Message.swift */,
 				408E5B1B1B331ED5007EFDF2 /* GlobalConstants.swift */,
+				401DFDEE1B4A7F9600861CC1 /* RecommendationItem.swift */,
+				401DFDF01B4A8ABB00861CC1 /* Recommendation.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -336,7 +354,9 @@
 			files = (
 				40401BB41B415666005C75DA /* ManhattanDarling-Regular.ttf in Resources */,
 				40DF23791AEF958C0021935A /* Main.storyboard in Resources */,
+				403921361B46CA5D004114EE /* RecommendationCollectionViewCell.xib in Resources */,
 				40401BB61B415671005C75DA /* ManhattanDarlingExtras.ttf in Resources */,
+				401DFDED1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.xib in Resources */,
 				40DF237E1AEF958C0021935A /* LaunchScreen.xib in Resources */,
 				400205A31B2F2CDE00D21CA0 /* NewProductCollectionViewCell.xib in Resources */,
 				40DF237B1AEF958C0021935A /* Images.xcassets in Resources */,
@@ -405,13 +425,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401DFDF11B4A8ABB00861CC1 /* Recommendation.swift in Sources */,
 				408F6B3F1AF7C5B6003655D4 /* APIBrain.swift in Sources */,
-				40401BBA1B41A24C005C75DA /* RecommendationsCollectionViewController.swift in Sources */,
 				40DF23761AEF958C0021935A /* ViewController.swift in Sources */,
 				40915F8A1B0A3486002340AC /* Store.swift in Sources */,
 				408E5B1E1B34303F007EFDF2 /* SignUpViewController.swift in Sources */,
 				40915F8F1B13603A002340AC /* AuthenticationViewController.swift in Sources */,
 				405AD36C1AF91E9600B0AF17 /* ProductDetailViewController.swift in Sources */,
+				401DFDE91B49D98500861CC1 /* RecommendationItemsCollectionViewController.swift in Sources */,
 				408F6B411AF8D580003655D4 /* SearchViewController.swift in Sources */,
 				40045ACC1B31D309005E9B43 /* FilterViewController.swift in Sources */,
 				40915F911B137AAE002340AC /* Message.swift in Sources */,
@@ -420,12 +441,15 @@
 				40915F8D1B0E3173002340AC /* ChatViewController.swift in Sources */,
 				409ED4271B25ACAA00FF6720 /* ProductsViewController.swift in Sources */,
 				400205A21B2F2CDE00D21CA0 /* NewProductCollectionViewCell.swift in Sources */,
+				401DFDEF1B4A7F9600861CC1 /* RecommendationItem.swift in Sources */,
 				40401BB21B3EE58F005C75DA /* ProductBasketViewController.swift in Sources */,
+				403921321B46C7D6004114EE /* RecommendationsViewController.swift in Sources */,
+				401DFDEC1B49EADB00861CC1 /* RecommendationItemCollectionViewCell.swift in Sources */,
 				40DF23711AEF958C0021935A /* AppDelegate.swift in Sources */,
 				409ED4291B25F11000FF6720 /* ProductCollectionViewCell.swift in Sources */,
 				40DF23741AEF958C0021935A /* PersonalShopper.xcdatamodeld in Sources */,
 				400E14061AF23570003AD486 /* Product.swift in Sources */,
-				40401BBC1B41A309005C75DA /* RecommendationCollectionViewCell.swift in Sources */,
+				403921351B46CA5D004114EE /* RecommendationCollectionViewCell.swift in Sources */,
 				408E5B201B344DD5007EFDF2 /* SettingsViewController.swift in Sources */,
 				408E5B1C1B331ED5007EFDF2 /* GlobalConstants.swift in Sources */,
 			);

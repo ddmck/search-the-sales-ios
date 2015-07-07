@@ -10,13 +10,18 @@ import UIKit
 import Alamofire
 
 class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UISearchBarDelegate {
-
+  
+  let formatter = NSNumberFormatter()
   var collectionView: UICollectionView?
   let brain = APIBrain.sharedInstance
   var products = Array<Product>()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+    formatter.locale = NSLocale(localeIdentifier: "en_GB")
+    
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.hidesBackButton = true;
     let searchBar = UISearchBar(frame: CGRectMake(-5.0, 0.0, 320.0, 44.0))
@@ -38,9 +43,9 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
     // Do any additional setup after loading the view, typically from a nib.
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    
-    collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-    layout.itemSize = CGSize(width: (collectionView!.frame.width / 2) - 15, height: (collectionView!.frame.height / 2) - 60)
+    var frame = CGRectMake(0, 0, self.view.bounds.width, (self.view.bounds.height - (44+20+49)))
+    collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+    layout.itemSize = CGSize(width: (collectionView!.frame.width / 2) - 15, height: (collectionView!.frame.height / 2) - 20)
     collectionView!.dataSource = self
     collectionView!.delegate = self
     collectionView!.registerNib(UINib(nibName: "NewProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
@@ -79,7 +84,9 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! NewProductCollectionViewCell
     let product = products[indexPath.row]
     cell.nameLabel.text = product.brandName
-    cell.priceLabel.text = "£ \(product.price)"
+    
+    
+    cell.priceLabel.text = formatter.stringFromNumber(product.price)
     let url = NSURL(string: product.image)
     
     cell.imageView.sd_setImageWithURL(url)

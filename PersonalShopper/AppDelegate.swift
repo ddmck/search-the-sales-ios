@@ -57,7 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     Alamofire.request(.GET, "\(GlobalConstants.backendURL)categories.json")
       .responseJSON {(_,_,JSON,_) in
-        println(JSON)
         if let data = JSON as? Array<Dictionary<String, AnyObject>> {
           self.brain.categories = data;
         }
@@ -65,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     Alamofire.request(.GET, "\(GlobalConstants.backendURL)brands.json")
       .responseJSON {(_,_,JSON,_) in
-        println(JSON)
         if let data = JSON as? Array<Dictionary<String, AnyObject>> {
           self.brain.brands = data;
         }
@@ -73,7 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     Alamofire.request(.GET, "\(GlobalConstants.backendURL)colors.json")
       .responseJSON {(_,_,JSON,_) in
-        println(JSON)
         if let data = JSON as? Array<Dictionary<String, AnyObject>> {
           self.brain.colors = data;
         }
