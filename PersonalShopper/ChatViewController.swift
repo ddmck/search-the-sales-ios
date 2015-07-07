@@ -101,4 +101,13 @@ class ChatViewController : JSQMessagesViewController {
     finishSendingMessage()
   }
   
+  override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
+    var data = self.messages[indexPath.row]
+    if (data.senderId != userDetails!["id"]! as? String) {
+      cell.textView.textColor = UIColor.blackColor()
+    }
+    return cell
+  }
+  
 }
