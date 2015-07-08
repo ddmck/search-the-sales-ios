@@ -66,7 +66,7 @@ class SignUpViewController: UIViewController {
             }
           
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabVC = storyboard.instantiateViewControllerWithIdentifier("TabViewController") as! UIViewController
+            let tabVC = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingController
             
             self.presentViewController(tabVC, animated: true, completion: nil)
         }
