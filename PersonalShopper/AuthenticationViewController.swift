@@ -28,6 +28,7 @@ class AuthenticationViewController: UIViewController {
   }
   
   @IBAction func SignInButtonPressed(sender: UIButton) {
+    println("sign in pressed")
     Alamofire.request(.POST, "\(GlobalConstants.backendURL)api/auth/sign_in", parameters: ["email": emailInput.text, "password": passwordInput.text])
       .responseJSON { (_, res, JSON, _) in
         

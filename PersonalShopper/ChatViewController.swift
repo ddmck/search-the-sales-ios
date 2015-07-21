@@ -58,7 +58,7 @@ class ChatViewController : JSQMessagesViewController {
       var sndrid = data![0]["senderID"] as! String!
       let m = JSQMessage(senderId: sndrid, senderDisplayName: "Alexandra", date: date, text: text)
       self.messages.append(m)
-      self.finishSendingMessage()
+      self.finishReceivingMessage()
       socket.emit("my other event", ["my": "data"])
 //      if let cur = data?[0] as? Double {
 //        socket.emit

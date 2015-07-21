@@ -53,11 +53,13 @@ class RecommendationsViewController: UIViewController, UICollectionViewDelegateF
     let imageViews = [cell.image1, cell.image2, cell.image3]
     var counter = 0
     for recItem in recommendation.recommendationItems {
-      var product = recItem.product
-      var url = product.image
-      var imageURL = NSURL(string: url)
-      imageViews[counter].sd_setImageWithURL(imageURL)
-      counter += 1
+      if counter < 3 {
+        var product = recItem.product
+        var url = product.image
+        var imageURL = NSURL(string: url)
+        imageViews[counter].sd_setImageWithURL(imageURL)
+        counter += 1
+      }
     }
     
     return cell
