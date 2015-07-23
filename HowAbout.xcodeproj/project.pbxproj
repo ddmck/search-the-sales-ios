@@ -635,7 +635,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "13399b54-3c02-463e-a0b4-fedbb926aafd";
 				SWIFT_OBJC_BRIDGING_HEADER = "PersonalShopper/Bridging-Header.h";
 			};
 			name = Release;
