@@ -27,6 +27,17 @@ class ChatViewController : JSQMessagesViewController {
     senderDisplayName = userDetails!["Name"]! as! String
     collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
     collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "appDidBecomeActive:", name: UIApplicationDidBecomeActiveNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+  }
+  
+  func appDidBecomeActive(notification: NSNotification) {
+    NSLog("did become active notification")
+  }
+  
+  func appWillEnterForeground(notification: NSNotification) {
+    self.messages = []
+    self.finishReceivingMessage()
     fetchMessages({
       messages in
       
@@ -35,14 +46,27 @@ class ChatViewController : JSQMessagesViewController {
       }
       
       self.finishReceivingMessage()
-
+      
     })
+
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+    println("chat view appeared")
     let socket = SocketIOClient(socketURL: GlobalConstants.socketURL, opts: ["connectParams": ["userID": "/\(self.senderId)"]])
-
+    self.messages = []
+    self.finishReceivingMessage()
+    fetchMessages({
+      messages in
+      
+      for m in messages {
+        self.messages.append(JSQMessage(senderId: m.senderID, senderDisplayName: m.senderName, date: m.date, text: m.message))
+      }
+      
+      self.finishReceivingMessage()
+      
+    })
     println("/\(self.senderId)")
     
     socket.on("connect") {data, ack in

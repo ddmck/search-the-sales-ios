@@ -16,9 +16,12 @@ class AuthenticationViewController: UIViewController {
   
   @IBOutlet weak var passwordInput: UITextField!
   
+  let progressHUD = ProgressHUD(text: "Signing In")
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    progressHUD.hide()
+    self.view.addSubview(progressHUD)
     // Do any additional setup after loading the view.
   }
   
@@ -28,13 +31,14 @@ class AuthenticationViewController: UIViewController {
   }
   
   @IBAction func SignInButtonPressed(sender: UIButton) {
-    println("sign in pressed")
+    progressHUD.show()
     Alamofire.request(.POST, "\(GlobalConstants.backendURL)api/auth/sign_in", parameters: ["email": emailInput.text, "password": passwordInput.text])
       .responseJSON { (_, res, JSON, _) in
         
         if let json = JSON as? Dictionary<String, AnyObject> {
           
           if let error = json["errors"] as? Array<String>{
+            self.progressHUD.hide()
             var joiner = ", "
             var alert = UIAlertController(title: "Alert", message: joiner.join(error), preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))

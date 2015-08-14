@@ -2,18 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "iPhone 6 Splash Screen One Small Dark.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "iPhone 6 Splash Screen One Small Dark2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "iPhone 6 Splash Screen One Small Dark3x.png"
+      "filename" : "iPhone 6 Splash Screen One Small Dark.pdf"
     }
   ],
   "info" : {

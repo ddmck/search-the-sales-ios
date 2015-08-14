@@ -12,6 +12,7 @@ import Alamofire
 import Locksmith
 import Fabric
 import Crashlytics
+import UXCam
 //import Socket_IO_Client_Swift
 
 @UIApplicationMain
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // Override point for customization after application launch.
     UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+    UXCam.startWithKey("219dce82365cd26")
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
@@ -50,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.sharedApplication().registerUserNotificationSettings(setting);
             UIApplication.sharedApplication().registerForRemoteNotifications();
           } else {
-            initialVC = storyboard.instantiateViewControllerWithIdentifier("LogInViewController") as! UIViewController
+            initialVC = storyboard.instantiateViewControllerWithIdentifier("SignUpViewController") as! UIViewController
           }
           self.window?.rootViewController = initialVC
           self.window?.makeKeyAndVisible()
@@ -58,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
     } else {
       var initialVC: UIViewController
-      initialVC = storyboard.instantiateViewControllerWithIdentifier("LogInViewController") as! UIViewController
+      initialVC = storyboard.instantiateViewControllerWithIdentifier("SignUpViewController") as! UIViewController
       self.window?.rootViewController = initialVC
       self.window?.makeKeyAndVisible()
     }
@@ -96,10 +98,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationDidEnterBackground(application: UIApplication) {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let initialVC = storyboard.instantiateViewControllerWithIdentifier("TabViewController") as! UIViewController
-    self.window?.rootViewController = initialVC
-    self.window?.makeKeyAndVisible()
+//    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//    let initialVC = storyboard.instantiateViewControllerWithIdentifier("TabViewController") as! UIViewController
+//    self.window?.rootViewController = initialVC
+//    self.window?.makeKeyAndVisible()
     
   }
 

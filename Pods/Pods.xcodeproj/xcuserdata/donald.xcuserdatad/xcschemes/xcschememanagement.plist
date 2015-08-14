@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-UXCam.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2B817D63F9485794C821BE4E</key>
+		<key>1F91082E285BE890DD99CA40</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>32498BF45EAB4CD0744F0D50</key>
+		<key>23260462C61CC61146117DA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>458901765DEE803EB537DFC4</key>
+		<key>2AC765AAD718774310EE1583</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>502D1DC49E52EE2E70D50475</key>
+		<key>57B49B253ADEB185DAD5B101</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51F1E4FEAE9AC14DE94CCCC2</key>
+		<key>89EC695C6AF97E2E5A94DFA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66B1B3C64C94621D7AAAFA71</key>
+		<key>98BB9D049E117E2E471C9E89</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6AA472F12CDEA21A98B4F63D</key>
+		<key>A1BB8B92050E88241F445907</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83D282D6F3BFA2474731AB70</key>
+		<key>A7B2C69ED538520E9A867944</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7D20611EC1A1C08046A8CC2</key>
+		<key>D64640F7C6FCA3956B0A2CB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA4110A8ECD03636672A25BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

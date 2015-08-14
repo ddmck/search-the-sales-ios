@@ -55,6 +55,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Locksmith.framework'
   install_framework 'SDWebImage.framework'
   install_framework 'Socket_IO_Client_Swift.framework'
+  install_framework 'UXCam.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'ActionSheetPicker_3_0.framework'
@@ -64,4 +65,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Locksmith.framework'
   install_framework 'SDWebImage.framework'
   install_framework 'Socket_IO_Client_Swift.framework'
+  install_framework 'UXCam.framework'
 fi

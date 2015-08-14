@@ -18,18 +18,19 @@ class ProductDetailViewController: UIViewController {
   @IBOutlet weak var productImage: UIImageView!
   @IBOutlet weak var productName: UILabel!
   @IBOutlet weak var productDescription: UILabel!
+  @IBOutlet weak var brandLabel: UILabel!
   
   @IBAction func addToBasketPressed(sender: UIButton) {
     
     
     let webview = UIWebView(frame: CGRect(x: 0, y: 0, width: 0, height: 0));
-    let url = NSURL (string: "http://ub.io/bertie@searchthesales.com/\(data.url)");
+    let url = NSURL (string: "http://ub.io/fetchmyfashion.com/\(data.url)");
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     let vc = storyboard.instantiateViewControllerWithIdentifier("ProductBasketVC") as! ProductBasketViewController
 
-    vc.url = NSURL (string: "http://ub.io/bertie@searchthesales.com/\(data.url)")
+    vc.url = NSURL (string: "http://ub.io/fetchmyfashion.com/\(data.url)")
     self.navigationController?.pushViewController(vc, animated: true)
   }
   
@@ -88,6 +89,7 @@ class ProductDetailViewController: UIViewController {
             self.data.sizes  = response["sizes"]! as? Array<Dictionary<String, AnyObject>>
             println(response["description"])
             self.productDescription.text = response["description"]! as? String
+            self.brandLabel.text = response["brand_name"]! as? String
             dispatch_async(dispatch_get_main_queue()) {
             }
           }

@@ -9,3 +9,4 @@
 
 #import "JSQMessagesViewController/JSQMessages.h"
 #import "SDWebImage/UIImageView+WebCache.h"
+#import "UXCam/UXCam.h"

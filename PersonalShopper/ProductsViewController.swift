@@ -141,7 +141,7 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
   func fetchPageOfProducts() {
     let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
     dispatch_async(dispatch_get_global_queue(priority, 0)) {
-      var params = ["filters": self.brain.filters, "page": self.brain.page] as [String: AnyObject]
+      var params = ["filters": self.brain.filters, "page": self.brain.page, "origin": "app"] as [String: AnyObject]
       if self.brain.searchString != "" {
         params["search_string"] = self.brain.searchString
       }

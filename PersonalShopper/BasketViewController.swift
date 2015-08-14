@@ -16,7 +16,7 @@ class BasketViewController: UIViewController {
     super.viewDidLoad()
     
     
-    let url = NSURL (string: "https://ub.io/basket?partnerDomain=bertie@searchthesales.com");
+    let url = NSURL (string: "https://ub.io/basket?partnerDomain=fetchmyfashion.com");
     let requestObj = NSURLRequest(URL: url!);
     webView.loadRequest(requestObj);
     // Do any additional setup after loading the view.

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "32498BF45EAB4CD0744F0D50"
+               BlueprintIdentifier = "98BB9D049E117E2E471C9E89"
                BuildableName = "Socket_IO_Client_Swift.framework"
                BlueprintName = "Pods-Socket.IO-Client-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
