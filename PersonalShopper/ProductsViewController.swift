@@ -29,6 +29,8 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
     let searchBarView = UIView(frame: CGRectMake(0.0, 0.0, 310.0, 44.0))
     searchBarView.autoresizingMask = UIViewAutoresizing.allZeros
     searchBar.delegate = self
+    searchBar.enablesReturnKeyAutomatically = false
+    
 //    searchBar.alpha = 0.5
     searchBar.backgroundColor = nil
 //    searchBar.barStyle = .White
@@ -122,11 +124,6 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
 //    return reusableView
 //  }
   
-  func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-    brain.searchString = searchBar.text
-    brain.changed = true
-  }
-  
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
     if (brain.changed) {
@@ -141,6 +138,22 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
   func scrollViewWillBeginDragging(scrollView: UIScrollView) {
     self.navigationItem.titleView?.subviews.first?.resignFirstResponder()
 
+  }
+  
+  func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    
+    brain.searchString = searchBar.text
+    brain.changed = true
+    
+    if !(searchBar.isFirstResponder()) {
+      if (brain.changed) {
+        brain.changed = false
+        brain.page = 1
+        products = Array<Product>()
+        self.collectionView!.reloadData()
+        fetchPageOfProducts()
+      }
+    }
   }
   
   func fetchPageOfProducts() {
