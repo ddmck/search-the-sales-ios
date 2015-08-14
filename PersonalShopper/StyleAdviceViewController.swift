@@ -20,6 +20,7 @@ class StyleAdviceViewController: UIViewController {
       justFinishedOnboarding = false
       let storyboard = UIStoryboard(name: "Main", bundle: nil)
       let vc = storyboard.instantiateViewControllerWithIdentifier("ChatViewController") as! ChatViewController
+      vc.hidesBottomBarWhenPushed = true
       self.navigationController?.pushViewController(vc, animated: false)
     }
     // Do any additional setup after loading the view.
@@ -31,14 +32,16 @@ class StyleAdviceViewController: UIViewController {
   }
   
   
-  /*
+
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
+    if segue.identifier == "toChat" {
+      
+      var destViewController: ChatViewController = segue.destinationViewController as! ChatViewController
+      destViewController.hidesBottomBarWhenPushed = true
+    }
   }
-  */
   
 }
