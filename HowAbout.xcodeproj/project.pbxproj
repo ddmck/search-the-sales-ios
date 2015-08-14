@@ -198,6 +198,7 @@
 				40BB982A1B6AFB8800044E45 /* StyleAdviceViewController.swift */,
 				40BB982C1B6B10BA00044E45 /* FinishOnboardingViewController.swift */,
 				406D0E211B7BD48500010D6F /* StartOnboardingViewController.swift */,
+				40DF23751AEF958C0021935A /* ViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -265,7 +266,6 @@
 				400E14011AF232C9003AD486 /* Views */,
 				400E13FC1AF12B7F003AD486 /* ViewControllers */,
 				40DF23701AEF958C0021935A /* AppDelegate.swift */,
-				40DF23751AEF958C0021935A /* ViewController.swift */,
 				40401BB31B415666005C75DA /* ManhattanDarling-Regular.ttf */,
 				40401BB51B415671005C75DA /* ManhattanDarlingExtras.ttf */,
 				40DF237A1AEF958C0021935A /* Images.xcassets */,
