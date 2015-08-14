@@ -52,8 +52,8 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
 
     collectionView!.backgroundColor = UIColor.whiteColor()
     self.view.addSubview(collectionView!)
-    
   }
+  
   
   override func viewDidAppear(animated: Bool) {
     if (brain.changed) {
@@ -83,7 +83,7 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! NewProductCollectionViewCell
     let product = products[indexPath.row]
-    cell.nameLabel.text = product.brandName
+    cell.nameLabel.text = product.brandName.uppercaseString
     
     
     cell.priceLabel.text = formatter.stringFromNumber(product.price)
@@ -136,6 +136,11 @@ class ProductsViewController: UIViewController, UICollectionViewDelegateFlowLayo
       self.collectionView!.reloadData()
       fetchPageOfProducts()
     }
+  }
+  
+  func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    self.navigationItem.titleView?.subviews.first?.resignFirstResponder()
+
   }
   
   func fetchPageOfProducts() {

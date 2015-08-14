@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Locksmith
 
-class AuthenticationViewController: UIViewController {
+class AuthenticationViewController: UIViewController, UITextFieldDelegate {
   
   @IBOutlet weak var emailInput: UITextField!
   
@@ -22,6 +22,8 @@ class AuthenticationViewController: UIViewController {
     super.viewDidLoad()
     progressHUD.hide()
     self.view.addSubview(progressHUD)
+    passwordInput.delegate = self
+
     // Do any additional setup after loading the view.
   }
   
@@ -30,7 +32,17 @@ class AuthenticationViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    signIn()
+    textField.resignFirstResponder()
+    return true
+  }
+  
   @IBAction func SignInButtonPressed(sender: UIButton) {
+    signIn()
+  }
+  
+  func signIn() {
     progressHUD.show()
     Alamofire.request(.POST, "\(GlobalConstants.backendURL)api/auth/sign_in", parameters: ["email": emailInput.text, "password": passwordInput.text])
       .responseJSON { (_, res, JSON, _) in
@@ -53,30 +65,29 @@ class AuthenticationViewController: UIViewController {
               "Name": json["data"]!["name"] as! String,
               "id": "\(id!)"
               ], forUserAccount: "myUserAccount")
-          
-          let (userDetails, error) = Locksmith.loadDataForUserAccount("myUserAccount")
-          
-          Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
-            "Access-Token": userDetails!["Access-Token"]! as! String,
-            "Client": userDetails!["Client"]! as! String,
-            "Uid": userDetails!["Uid"]! as! String,
-            "Expiry": userDetails!["Expiry"]! as! String
-          ]
-      
-          Alamofire.request(.GET, "\(GlobalConstants.backendURL)api/wishlist_items.json")
-            .responseJSON { (_,_,JSON,_) in
             
+            let (userDetails, error) = Locksmith.loadDataForUserAccount("myUserAccount")
+            
+            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = [
+              "Access-Token": userDetails!["Access-Token"]! as! String,
+              "Client": userDetails!["Client"]! as! String,
+              "Uid": userDetails!["Uid"]! as! String,
+              "Expiry": userDetails!["Expiry"]! as! String
+            ]
+            
+            Alamofire.request(.GET, "\(GlobalConstants.backendURL)api/wishlist_items.json")
+              .responseJSON { (_,_,JSON,_) in
+                
+            }
+            
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabVC = storyboard.instantiateViewControllerWithIdentifier("TabViewController") as! UIViewController
+            
+            self.presentViewController(tabVC, animated: true, completion: nil)
           }
-          
-        
-          let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          let tabVC = storyboard.instantiateViewControllerWithIdentifier("TabViewController") as! UIViewController
-        
-          self.presentViewController(tabVC, animated: true, completion: nil)
         }
-      }
     }
-    
   }
   
   /*
